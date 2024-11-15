@@ -12,7 +12,7 @@ router.post("/login", async (req, res) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
     if (!user || !(await verifyPassword(password, user.salt, user.password))) {
-      return res.status(401).send("Invalid username or password");
+      return res.status(401).send("Invalid username or password.");
     }
 
     const token = jwt.sign({ userId: user._id, role: user.role }, JWT_SECRET, {
