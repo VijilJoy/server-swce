@@ -30,9 +30,10 @@ router.post(
   async (req, res) => {
     try {
       const data = new Data({
-        userId: req.user?.userId || "123456",
+        userId: req.user?.userId,
         title: req.body.title,
-        data: req.body.data,
+        contentId: req.body.contentId,
+        description: req.body.description,
       });
 
       await data.save();

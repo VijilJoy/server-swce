@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-const uri = "mongodb://127.0.0.1:27017/projects";
-const dbConnect = async () => {
-  await mongoose
+const uri =
+  "mongodb+srv://projectsswcein:AMdJBeceI2eCTpTF@pswcedb.iuz1h.mongodb.net/data?retryWrites=true&w=majority&appName=pswcedb";
+const dbConnect = () => {
+  mongoose
     .connect(uri)
     .then(() => "connected to db")
     .catch((error) => console.error("MongoDB connection error:", error));
