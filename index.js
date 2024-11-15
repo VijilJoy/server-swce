@@ -18,7 +18,7 @@ app.use(projects);
 app.use(search);
 
 dbConnect();
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Connected to db");
   console.log("Server running..");
 });
