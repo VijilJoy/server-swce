@@ -10,6 +10,7 @@ const dbConnect = () => {
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  salt: { type: String, required: true },
   role: { type: String, enum: ["user", "admin", "superuser"], default: "user" }, // Role field with default "user"
 });
 const dataSchema = new mongoose.Schema({
