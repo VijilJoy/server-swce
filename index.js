@@ -11,11 +11,14 @@ const search = require("./routes/search");
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:5000", credentials: true }));
 
-app.use(login);
-app.use(signup);
-app.use(users);
-app.use(projects);
-app.use(search);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+// app.use(login);
+// app.use(signup);
+// app.use(users);
+// app.use(projects);
+// app.use(search);
 
 app.listen(process.env.PORT || 3000, () => {
   dbConnect();
