@@ -32,7 +32,7 @@ router.post(
       const data = new Data({
         userId: req.user?.userId,
         title: req.body.title,
-        contentId: req.body.contentId,
+        content: req.body.content,
         description: req.body.description,
       });
 

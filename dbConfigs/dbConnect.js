@@ -18,7 +18,7 @@ const dataSchema = new mongoose.Schema({
   title: String,
   description: String,
   date: { type: Date, default: Date.now },
-  contentId: String,
+  content: String,
 });
 
 dataSchema.index({ title: "text", description: "text" });
