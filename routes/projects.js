@@ -19,7 +19,7 @@ router.get("/get-data/:id", authenticateToken, async (req, res) => {
 
     res.json(dataEntry);
   } catch (error) {
-    res.status(500).send("Error fetching data: " + error.message);
+    res.status(500).send("Error fething data: " + error.message);
   }
 });
 
