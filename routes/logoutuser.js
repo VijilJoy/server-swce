@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const authenticateToken = require("../Authentication/AuthToken");
+const { authenticateToken } = require("../Authentication/AuthToken");
 const tokenBlacklist = [];
 
 router.post("/logout", authenticateToken, (req, res) => {
