@@ -17,7 +17,7 @@ const dataSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   title: String,
   description: String,
-  date: { type: Date, default: Date.now },
+  date: String,
   content: String,
   public: { type: Boolean, default: false },
   type: String,

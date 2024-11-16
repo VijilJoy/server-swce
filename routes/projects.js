@@ -28,6 +28,7 @@ router.post(
   authenticateToken,
   authorizeRole(["admin", "user"]),
   async (req, res) => {
+    const date = new Date();
     try {
       const data = new Data({
         userId: req.user?.userId,
@@ -37,6 +38,7 @@ router.post(
         public: req.body.public,
         type: req.body.type,
         department: req.body.department,
+        date: date,
       });
 
       await data.save();
