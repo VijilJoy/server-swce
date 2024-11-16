@@ -19,6 +19,9 @@ const dataSchema = new mongoose.Schema({
   description: String,
   date: { type: Date, default: Date.now },
   content: String,
+  public: { type: Boolean, default: false },
+  type: String,
+  department: String,
 });
 
 dataSchema.index({ title: "text", description: "text" });

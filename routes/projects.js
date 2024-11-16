@@ -34,6 +34,9 @@ router.post(
         title: req.body.title,
         content: req.body.content,
         description: req.body.description,
+        public: req.body.public,
+        type: req.body.type,
+        department: req.body.department,
       });
 
       await data.save();
