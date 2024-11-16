@@ -6,7 +6,7 @@ router.get("/adminverify", authenticateToken, async (req, res) => {
   try {
     const user = await User.findOne({ username: req.user.username });
     if (!user || user.role !== "admin") {
-      return res.status(403).send("user");
+      return res.status(200).send("user");
     }
     res.status(200).send("notadmin");
   } catch (error) {
