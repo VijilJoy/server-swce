@@ -28,5 +28,5 @@ app.use(adminverify);
 app.listen(process.env.PORT || 3000, () => {
   dbConnect();
   console.log("Connected to db");
-  console.log("Server running..");
+  console.log("Server running...");
 });
