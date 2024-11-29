@@ -6,7 +6,13 @@ const { authorizeRole } = require("../Authentication/AuthToken");
 
 router.get("/get-all-projects", authenticateToken, async (req, res) => {
   Data.find({}).then((data) => {
-    res.json(data);
+    var newData = data;
+    data.forEach((element) => {
+      User.findById(element.userId).then((user) => {
+        newData[element._id].username = user.username;
+      });
+    });
+    res.json(newData);
   });
 });
 
